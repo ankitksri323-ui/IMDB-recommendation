@@ -5,7 +5,6 @@ import io
 import shutil
 import urllib3
 
-# Suppress SSL warnings
 urllib3.disable_warnings(urllib3.exceptions.InsecureRequestWarning)
 
 # Folder paths

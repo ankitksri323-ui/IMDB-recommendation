@@ -9,7 +9,7 @@ from sklearn.linear_model import ElasticNet
 # add path for local scripts
 sys.path.append(os.path.join(os.path.dirname(__file__), "scripts", "training"))
 
-from elasticnet_recommender import make_features, scale_features  # still usable
+from elasticnet_recommender import make_features, scale_features  
 from baseline_recommender import recommend_baseline
 
 RANDOM_STATE = 42
@@ -21,12 +21,10 @@ def evaluate_models(ratings_file, movies_file, test_size=0.2):
     ratings = pd.read_csv(ratings_file)
     movies = pd.read_csv(movies_file)
 
-    # ----------------------------
     # Train/test split
-    # ----------------------------
     train, test = train_test_split(ratings, test_size=test_size, random_state=RANDOM_STATE)
 
-    # ========== Baseline ==========
+    # Baseline 
     global_mean = train["rating"].mean()
     movie_means = train.groupby("movieId")["rating"].mean()
 
@@ -111,7 +109,7 @@ def evaluate_models(ratings_file, movies_file, test_size=0.2):
     # ----------------------------
     # Print results
     # ----------------------------
-    print("📊 Model Comparison (on test set, enriched features)")
+    print("Model Comparison (on test set, enriched features)")
     print("="*60)
     print(f"Baseline   → RMSE: {baseline_rmse:.4f}, MAE: {baseline_mae:.4f}, R²: {baseline_r2:.4f}")
     print(f"ElasticNet (enriched) → RMSE: {elastic_rmse:.4f}, MAE: {elastic_mae:.4f}, R²: {elastic_r2:.4f}")

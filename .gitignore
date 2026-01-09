@@ -1,71 +1,22 @@
 # Python
 __pycache__/
-*.py[cod]
-*$py.class
-*.so
-.Python
-build/
-develop-eggs/
-dist/
-downloads/
-eggs/
-.eggs/
-lib/
-lib64/
-parts/
-sdist/
-var/
-wheels/
-*.egg-info/
-.installed.cfg
-*.egg
-MANIFEST
+*.pyc
 
-# Virtual environments
-.env
-.venv/
-env/
+# Virtual environment
 venv/
-ENV/
-env.bak/
-venv.bak/
 
-# Data files (ignore raw and processed)
-data/raw/
-data/processed/
-data/*.parquet
-*.parquet
-
-# Project artifacts
-results/
-pretrained_models/
-
-# IDE
+# Editor / OS
 .vscode/
-.idea/
-*.swp
-*.swo
-*.ipynb_checkpoints
-
-# OS
 .DS_Store
-.DS_Store?
-._*
-.Spotlight-V100
-.Trashes
-ehthumbs.db
-Thumbs.db
 
-# Logs
-*.log
+# Data (local only)
+data/raw/
+data/enriched/
+*.csv
+*.xlsx
 
-# Testing
-.pytest_cache/
-.ruff_cache/
-.coverage
-htmlcov/
+# Allow small sample
+!dataset_sample.csv
 
-# MyPy
-.mypy_cache/
-.dmypy.json
-dmypy.json
+# Results / outputs
+results/
